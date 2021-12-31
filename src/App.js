@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { Table, Error } from './Components';
 
 function App() {
   const SwapiURL = 'https://swapi.dev';
+  const [ planets, setPlanets ] = useState([]);
+  const [ isError, setError ] = useState(false);
+
   useEffect(() => {
-    fetchPlanets();
+    fetchPlanets().then((planets) => {
+      setPlanets(planets);
+      setError(false);
+    });
   }, [])
 
   const fetchPlanets = async () => {
@@ -14,9 +21,11 @@ function App() {
       return planets.results;
     } catch(error) {
       console.error('Planet Fetch Error', error);
+      setError(true);
       throw error;
     }
   }
+  if (isError) return <Error />;
   return (
     <div className="App">
       <header className="App-header">
