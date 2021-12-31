@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import './styles/App.css';
+import { Table, Error, Loading } from './Components';
 
 function App() {
+  const SwapiURL = 'https://swapi.dev'; // If there is a live and sandbox api, this should be an env variable
+  const [ planets, setPlanets ] = useState([]);
+  const [ isError, setError ] = useState(false);
+  const [ isLoading, setLoading ] = useState(false);
+
+  useEffect(() => {
+    fetchPlanets().then((planets) => {
+      planets.sort((a,b) => (a.name).localeCompare(b.name));
+      setPlanets(planets);
+      setError(false);
+      setLoading(false);
+    });
+  }, [])
+
+  const fetchPlanets = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`${SwapiURL}/api/planets`);
+      const planets = await response.json();
+      return planets.results;
+    } catch(error) {
+      console.error('Planet Fetch Error', error);
+      setError(true);
+      throw error;
+    }
+  }
+  if (isError) return <Error />;
+  if (isLoading) return <Loading />;
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <h1>Star Wars Planets</h1>
       </header>
+      <Table planets={planets}/>
     </div>
   );
 }
