@@ -1,6 +1,6 @@
 function Error ({ }) {
     return (
-        <div id='table'>
+        <div id='error'>
             <h1>There has been an Error!</h1>
         </div>
     )
