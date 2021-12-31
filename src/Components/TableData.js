@@ -1,3 +1,5 @@
+import { TableRow } from './';
+
 function TableData ({ columns, planets }) {
     return (
         <tbody>
@@ -5,6 +7,7 @@ function TableData ({ columns, planets }) {
                 planets.map((planet, idx) => {
                     return (
                         <tr key={idx}>
+                            <TableRow planetData={planet} columns={columns} />
                         </tr>
                     )
                 })
