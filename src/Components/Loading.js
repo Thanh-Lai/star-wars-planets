@@ -1,6 +1,6 @@
 import loadingSpinner from'../images/loading.gif';
 
-function Loading ({ }) {
+function Loading () {
     return (
         <div className='center'>
             <h1>Loading Data...</h1>
