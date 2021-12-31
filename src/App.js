@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     fetchPlanets().then((planets) => {
+      planets.sort((a,b) => (a.name).localeCompare(b.name));
       setPlanets(planets);
       setError(false);
       setLoading(false);

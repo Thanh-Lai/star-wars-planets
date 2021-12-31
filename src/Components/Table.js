@@ -3,12 +3,12 @@ import '../styles/Table.css';
 
 function Table ({ planets }) {
     const displayData = {
-        'name': 'Name',
+        'link': 'Name',
         'climate': 'Climate',
-        'residents': 'Residents',
+        'residents_spaced': 'Residents',
         'terrain': 'Terrains',
-        'population': 'Population',
-        'surface_area': 'Surface Area',
+        'population_spaced': 'Population',
+        'surface_area': 'Water Surface Area (km^2)',
     }
     const headers = Object.values(displayData);
     const columns = Object.keys(displayData);
