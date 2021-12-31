@@ -3,7 +3,7 @@ import './styles/App.css';
 import { Table, Error, Loading } from './Components';
 
 function App() {
-  const SwapiURL = 'https://swapi.dev';
+  const SwapiURL = 'https://swapi.dev'; // If there is a live and sandbox api, this should be an env variable
   const [ planets, setPlanets ] = useState([]);
   const [ isError, setError ] = useState(false);
   const [ isLoading, setLoading ] = useState(false);

@@ -2,6 +2,7 @@ import { TableHeader, TableData } from './';
 import '../styles/Table.css';
 
 function Table ({ planets }) {
+    // mapper for header names and data fields
     const displayData = {
         'link': 'Name',
         'climate': 'Climate',
