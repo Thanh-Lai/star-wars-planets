@@ -4,7 +4,7 @@ function Error () {
     return (
         <div className='center' >
             <h1>There has been an Error!</h1>
-            <img src={errorImg} alt="error" />;
+            <img src={errorImg} alt="error" />
         </div>
     )
 }

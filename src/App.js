@@ -15,7 +15,7 @@ function App() {
       setError(false);
       setLoading(false);
     });
-  }, [])
+  }, []);
 
   const fetchPlanets = async () => {
     try {

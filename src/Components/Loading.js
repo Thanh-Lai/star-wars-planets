@@ -4,7 +4,7 @@ function Loading ({ }) {
     return (
         <div className='center'>
             <h1>Loading Data...</h1>
-            <img src={loadingSpinner} alt="spinner" />;
+            <img src={loadingSpinner} alt="spinner" />
         </div>
     )
 }

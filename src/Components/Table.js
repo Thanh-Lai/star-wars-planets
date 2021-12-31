@@ -10,7 +10,7 @@ function Table ({ planets }) {
         'terrain': 'Terrains',
         'population_spaced': 'Population',
         'surface_area': 'Water Surface Area (km^2)',
-    }
+    };
     const headers = Object.values(displayData);
     const columns = Object.keys(displayData);
 
