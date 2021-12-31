@@ -10,4 +10,5 @@ function TableRow ({ planetData, columns }) {
         })
     )
 }
+
 export default TableRow;

@@ -16,7 +16,7 @@ function TableData ({ columns, planets }) {
 
     const calculateSurfaceArea = (planet) => {
         const surfaceWater = planet['surface_water'];
-        if (surfaceWater=== 'unknown') return 'unknown';
+        if (surfaceWater === 'unknown') return 'unknown';
         const radius = planet['diameter'] / 2;
         const totalSurfaceArea = 4 * Math.PI * Math.pow(radius, 2);
         const waterSurfacePercentage = surfaceWater / 100;
@@ -44,4 +44,5 @@ function TableData ({ columns, planets }) {
         </tbody>
     )
 }
+
 export default TableData;

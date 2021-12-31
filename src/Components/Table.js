@@ -23,4 +23,5 @@ function Table ({ planets }) {
         </div>
     )
 }
+
 export default Table;

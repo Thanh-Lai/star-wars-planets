@@ -13,4 +13,5 @@ function TableHeader ({ headers }) {
         </thead>
     )
 }
+
 export default TableHeader;

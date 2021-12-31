@@ -29,6 +29,7 @@ function App() {
       throw error;
     }
   }
+  
   if (isError) return <Error />;
   if (isLoading) return <Loading />;
   return (
