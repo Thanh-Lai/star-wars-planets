@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './styles/App.css';
 import { Table, Error, Loading } from './Components';
 
 function App() {
@@ -29,12 +29,13 @@ function App() {
     }
   }
   if (isError) return <Error />;
-  if (isLoading) return <Loading />
+  if (isLoading) return <Loading />;
   return (
     <div className="App">
       <header className="App-header">
           <h1>Star Wars Planets</h1>
       </header>
+      <Table planets={planets}/>
     </div>
   );
 }

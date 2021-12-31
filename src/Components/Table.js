@@ -1,6 +1,7 @@
-import { TableHeader } from './';
+import { TableHeader, TableData } from './';
+import '../styles/Table.css';
 
-function Table ({ }) {
+function Table ({ planets }) {
     const displayData = {
         'name': 'Name',
         'climate': 'Climate',
@@ -16,6 +17,7 @@ function Table ({ }) {
         <div id='table'>
             <table>
                 <TableHeader headers={headers}/>
+                <TableData columns={columns} planets={planets}/>
             </table>
         </div>
     )
