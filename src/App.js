@@ -1,22 +1,26 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const SwapiURL = 'https://swapi.dev';
+  useEffect(() => {
+    fetchPlanets();
+  }, [])
+
+  const fetchPlanets = async () => {
+    try {
+      const response = await fetch(`${SwapiURL}/api/planets`);
+      const planets = await response.json();
+      return planets.results;
+    } catch(error) {
+      console.error('Planet Fetch Error', error);
+      throw error;
+    }
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <h1>Star Wars Planets</h1>
       </header>
     </div>
   );
