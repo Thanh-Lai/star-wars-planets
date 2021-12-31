@@ -11,7 +11,7 @@ function TableData ({ columns, planets }) {
     }
 
     const countResidents = (residents) => {
-        return residents.length;
+        return spaceNumbers(residents.length);
     }
 
     const calculateSurfaceArea = (planet) => {
